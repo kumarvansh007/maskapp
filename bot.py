@@ -5,9 +5,10 @@ import re
 import time
 
 # ================== YOUR CREDENTIALS ==================
-API_ID = 31571564
-API_HASH = "74451d53e515db4a8c9ddb34b7279d85"
-BOT_TOKEN = "8384311090:AAEkYjVzxqZ6Pk1Lx5Scrw2fTOMb11UlRrU"
+
+API_ID = int(os.environ["API_ID"])
+API_HASH = os.environ["API_HASH"]
+BOT_TOKEN = os.environ["BOT_TOKEN"]
 # ======================================================
 
 app = Client("anon_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
@@ -238,5 +239,6 @@ async def handle_text(client, message):
 
     else:
         await message.reply("Use buttons to interact.")
+
 
 app.run()
